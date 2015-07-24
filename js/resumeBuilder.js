@@ -147,4 +147,3 @@ function inName(nm){
 //$("#main").append(internationalizeButton);
 
 $("#map-div").append(googleMap);
-console.log("map append function");
