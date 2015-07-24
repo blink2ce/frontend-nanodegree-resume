@@ -17,7 +17,6 @@ var projects = {
 projects.display = function(){
 	for (p in projects.proj){
 		$("#projects").append(HTMLprojectStart);
-		console.log(projects.proj[p].title);
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.proj[p].title);
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.proj[p].dates);
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.proj[p].description);
@@ -147,4 +146,5 @@ function inName(nm){
 }
 //$("#main").append(internationalizeButton);
 
-//$("#main")append(googleMap);
+$("#map-div").append(googleMap);
+console.log("map append function");

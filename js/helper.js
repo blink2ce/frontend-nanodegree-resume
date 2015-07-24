@@ -104,7 +104,7 @@ var map;    // declares a global map variable
 Start here! initializeMap() is called when page is loaded.
 */
 function initializeMap() {
-
+  console.log("made it to initializeMap function");
   var locations;
 
   var mapOptions = {
@@ -113,7 +113,7 @@ function initializeMap() {
 
 
   map = new google.maps.Map(document.querySelector('#map-div'), mapOptions);
-
+  console.log("map is just initialized");
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -238,8 +238,8 @@ window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-/*
-window.addEventListener('resize', function(e) {
+
+/*window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
  map.fitBounds(mapBounds);
 });
