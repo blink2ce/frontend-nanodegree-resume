@@ -13,6 +13,16 @@
   padding-right: 5%;
 }
 
+
+#projects img{
+  float: right;
+  max-width:30%;
+}
+
+#map-div{
+  margin-bottom: 10px;
+}
+
 h1 {
 
   font-size: 40px;

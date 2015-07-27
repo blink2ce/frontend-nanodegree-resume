@@ -9,27 +9,10 @@ var projects = {
 			"title" : "Personal Website",
 			"dates" : "2015",
 			"description" : "Made personal website using responsive design techniques",
-			"im" : "images/FlyingPup.jpg"
+			"im" : "images/picofportfolio.png"
 		}
 	]
 }
-
-projects.display = function(){
-	for (p in projects.proj){
-		$("#projects").append(HTMLprojectStart);
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.proj[p].title);
-		var formattedDates = HTMLprojectDates.replace("%data%", projects.proj[p].dates);
-		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.proj[p].description);
-		var formattedImage = HTMLprojectImage.replace("%data%", projects.proj[p].im);
-		$(".project-entry:last").append(formattedTitle);
-		$(".project-entry:last").append(formattedDates);
-		$(".project-entry:last").append(formattedDescription);
-		$(".project-entry:last").append(formattedImage);
-	}
-}
-
-projects.display();
-
 
 var bio = {
 	"name" : "Brian Neaves",
@@ -43,8 +26,8 @@ var bio = {
 		"location" : "Atlanta, GA"
 	},
 	"welcomemessage": "Welcome to my resume!",
-	"skills" : ["Awesomeness", "delivering things", "pewping"],
-	"bioPic" : "images/fry.jpg"
+	"skills" : ["Front End Web Develoment", "Good Conversation", "Vegan Cooking"],
+	"bioPic" : "images/BrianProfile.jpg"
 }
 
 
@@ -92,32 +75,38 @@ var education = {
  	]
  }
 
-function displayEducation(){
-	for(school in education.Schools){
-		$("#education").append(HTMLschoolStart);
-		var schoolName = HTMLschoolName.replace("%data%", education.Schools[school].name);
-		$(".education-entry:last").append(schoolName);
-		var degreeName = HTMLschoolDegree.replace("%data%", education.Schools[school].major);
-		$(".education-entry:last").append(degreeName);
-		var dates = HTMLschoolDates.replace("%data%", education.Schools[school].Dates);
-		$(".education-entry:last").append(dates);
-		var cityName = HTMLschoolLocation.replace("%data%", education.Schools[school].city);
-		$(".education-entry:last").append(cityName);
-
+projects.display = function(){
+	for (p in projects.proj){
+		$("#projects").append(HTMLprojectStart);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.proj[p].title);
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.proj[p].dates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.proj[p].description);
+		var formattedImage = HTMLprojectImage.replace("%data%", projects.proj[p].im);
+		$(".project-entry:last").append(formattedTitle);
+		$(".project-entry:last").append(formattedDates);
+		$(".project-entry:last").append(formattedDescription);
+		$(".project-entry:last").append(formattedImage);
 	}
 }
 
-displayEducation();
+projects.display();
 
- if(bio.skills.length > 0) {
- 	$("#header").append(HTMLskillsStart);
- 	var formattedSkill = HTMLskills.replace('%data%', bio.skills[0]);
- 	$("#skills").append(formattedSkill);
- 	var formattedSkill2 = HTMLskills.replace('%data%', bio.skills[1]);
- 	$("#skills").append(formattedSkill2);
- 	var formattedSkill3 = HTMLskills.replace('%data%', bio.skills[2]);
- 	$("#skills").append(formattedSkill3);
- }
+function displayBio(){
+	if(bio.skills.length > 0) {
+	 	$("#header").append(HTMLskillsStart);
+	 	var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
+	 	$("#skills").append(formattedBioPic);
+	 	var formattedSkill = HTMLskills.replace('%data%', bio.skills[0]);
+	 	$("#skills").append(formattedSkill);
+	 	var formattedSkill2 = HTMLskills.replace('%data%', bio.skills[1]);
+	 	$("#skills").append(formattedSkill2);
+	 	var formattedSkill3 = HTMLskills.replace('%data%', bio.skills[2]);
+	 	$("#skills").append(formattedSkill3);
+
+  	}
+}
+
+displayBio();
 
 function displayWork(){
 	for(job in work.jobs){
@@ -135,15 +124,21 @@ function displayWork(){
 
 displayWork();
 
-function inName(nm){
-	name = nm.trim().split(" ")
-	//cannot access trim of undefined
-	var fstLetter = (name[0].substring(0,2)).toUpperCase();
-	var restoffstName = (name[0].substring(1)).toLowerCase();
-	n1 = fstLetter + restoffstName;
-	n2 = fullName[1].toUpperCase;
-	return n1 + n2;
+function displayEducation(){
+	for(school in education.Schools){
+		$("#education").append(HTMLschoolStart);
+		var schoolName = HTMLschoolName.replace("%data%", education.Schools[school].name);
+		$(".education-entry:last").append(schoolName);
+		var degreeName = HTMLschoolDegree.replace("%data%", education.Schools[school].major);
+		$(".education-entry:last").append(degreeName);
+		var dates = HTMLschoolDates.replace("%data%", education.Schools[school].Dates);
+		$(".education-entry:last").append(dates);
+		var cityName = HTMLschoolLocation.replace("%data%", education.Schools[school].city);
+		$(".education-entry:last").append(cityName);
+
+	}
 }
-//$("#main").append(internationalizeButton);
+
+displayEducation();
 
 $("#map-div").append(googleMap);
