@@ -26,7 +26,7 @@
 h1 {
 
   font-size: 40px;
-  color: #F5A623;
+  color: #FE4805;
   line-height: 48px;
   display: inline;
 }
@@ -42,14 +42,14 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #FE4805;
   line-height: 22px;
 }
 
 h4 {
   font-style: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #FE4805;
   line-height: 17px;
 }
 
@@ -98,7 +98,7 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #FE4805;
   display: none;
 }
 

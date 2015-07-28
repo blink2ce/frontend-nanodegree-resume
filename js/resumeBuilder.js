@@ -26,7 +26,7 @@ var bio = {
 		"location" : "Atlanta, GA"
 	},
 	"welcomemessage": "Welcome to my resume!",
-	"skills" : ["Front End Web Develoment", "Good Conversation", "Vegan Cooking"],
+	"skills" : ["Front End Web Development", "Good Conversation", "Vegan Cooking"],
 	"bioPic" : "images/BrianProfile.jpg"
 }
 
@@ -91,7 +91,7 @@ projects.display = function(){
 
 projects.display();
 
-function displayBio(){
+bio.display = function(){
 	if(bio.skills.length > 0) {
 	 	$("#header").append(HTMLskillsStart);
 	 	var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
@@ -106,9 +106,9 @@ function displayBio(){
   	}
 }
 
-displayBio();
+bio.display();
 
-function displayWork(){
+work.display = function(){
 	for(job in work.jobs){
 		$("#workExperience").append(HTMLworkStart);
 		var formattedJob = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -122,9 +122,9 @@ function displayWork(){
 	}
 }
 
-displayWork();
+work.display();
 
-function displayEducation(){
+education.display = function(){
 	for(school in education.Schools){
 		$("#education").append(HTMLschoolStart);
 		var schoolName = HTMLschoolName.replace("%data%", education.Schools[school].name);
@@ -139,6 +139,6 @@ function displayEducation(){
 	}
 }
 
-displayEducation();
+education.display();
 
 $("#map-div").append(googleMap);
